@@ -105,10 +105,25 @@
 // console.log(arrayToObject); // { apple: 5, banana: 6, cherry: 6 }
 
 
-const arrayNumbers = [1, 2, 3, 4, 5];
-function transformToObjects(numberArray) {
-    return numberArray.map((item) => ({ val: item }))
+// const arrayNumbers = [1, 2, 3, 4, 5];
+// function transformToObjects(numberArray) {
+//     return numberArray.map((item) => ({ val: item }))
+// }
+
+// const transformedArray = transformToObjects(arrayNumbers);
+// console.log(transformedArray); // ["val:1", "val:2", "val:3", "val:4", "val:5"]
+
+// Destructuring arrays and objects
+const array = [1, 2, 3, 4, 5];
+const [first, second] = array;
+console.log(second); // 1
+
+const object = { a: "Andrey", b: "Aires", c: 38 };
+const { a: firstName, b: lastName, c: age } = object;
+console.log(`${firstName} ${lastName}, ${age} anos de idade.`); // 1
+
+function greet({ a, c }) {
+    return `Hello, my name is ${a} and I am ${c} years old.`;
 }
 
-const transformedArray = transformToObjects(arrayNumbers);
-console.log(transformedArray); // ["val:1", "val:2", "val:3", "val:4", "val:5"]
+console.log(greet(object));
