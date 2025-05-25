@@ -113,17 +113,29 @@
 // const transformedArray = transformToObjects(arrayNumbers);
 // console.log(transformedArray); // ["val:1", "val:2", "val:3", "val:4", "val:5"]
 
-// Destructuring arrays and objects
-const array = [1, 2, 3, 4, 5];
-const [first, second] = array;
-console.log(second); // 1
+// // Destructuring arrays and objects
+// const array = [1, 2, 3, 4, 5];
+// const [first, second] = array;
+// console.log(second); // 1
 
-const object = { a: "Andrey", b: "Aires", c: 38 };
-const { a: firstName, b: lastName, c: age } = object;
-console.log(`${firstName} ${lastName}, ${age} anos de idade.`); // 1
+// const object = { a: "Andrey", b: "Aires", c: 38 };
+// const { a: firstName, b: lastName, c: age } = object;
+// console.log(`${firstName} ${lastName}, ${age} anos de idade.`); // 1
 
-function greet({ a, c }) {
-    return `Hello, my name is ${a} and I am ${c} years old.`;
-}
+// function greet({ a, c }) {
+//     return `Hello, my name is ${a} and I am ${c} years old.`;
+// }
 
-console.log(greet(object));
+// console.log(greet(object));
+
+// Spread Operator
+const array1 = [1, 2, 3, 3.11];
+const array2 = [4, 5, 6, { a: "a" }];
+const array3 = [[1, 2], [3, 4]];
+const combinedArray = [...array1, ...array2, ...array3[0], ...array3[1]];
+console.log(combinedArray); // [1, 2, 3, 4, 5, 6]
+
+const object1 = { user: "Andrey", email: "andrey@email.com" };
+const object2 = { isAdmin: false, isUser: true };
+const combinedObject = { ...object1, ...object2 };
+console.log(combinedObject); //{user: 'Andrey', email: 'andrey@email.com', isAdmin: false, isUser: true}
