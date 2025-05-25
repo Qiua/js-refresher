@@ -140,8 +140,19 @@
 // const combinedObject = { ...object1, ...object2 };
 // console.log(combinedObject); //{user: 'Andrey', email: 'andrey@email.com', isAdmin: false, isUser: true}
 
-// For of loop
-const array = [1, 2, 3, 4, 5];
-for (const item of array) {
-    console.log(item); // 1, 2, 3, 4, 5
+// // For of loop
+// const array = [1, 2, 3, 4, 5];
+// for (const item of array) {
+//     console.log(item); // 1, 2, 3, 4, 5
+// }
+
+// For in loop
+const object = { a: "Andrey", b: "Aires", c: 38 };
+for (const key in object) {
+    console.log(`${key}: ${object[key]}`); // a: Andrey, b: Aires, c: 38
 }
+// For each loop
+const array = [1, 2, 3, 4, 5];
+array.forEach((item, index) => {
+    console.log(`Index: ${index}, Item: ${item}`); // Index: 0, Item: 1, Index: 1, Item: 2, ...
+});
