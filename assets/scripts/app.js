@@ -128,14 +128,20 @@
 
 // console.log(greet(object));
 
-// Spread Operator
-const array1 = [1, 2, 3, 3.11];
-const array2 = [4, 5, 6, { a: "a" }];
-const array3 = [[1, 2], [3, 4]];
-const combinedArray = [...array1, ...array2, ...array3[0], ...array3[1]];
-console.log(combinedArray); // [1, 2, 3, 4, 5, 6]
+// // Spread Operator
+// const array1 = [1, 2, 3, 3.11];
+// const array2 = [4, 5, 6, { a: "a" }];
+// const array3 = [[1, 2], [3, 4]];
+// const combinedArray = [...array1, ...array2, ...array3[0], ...array3[1]];
+// console.log(combinedArray); // [1, 2, 3, 4, 5, 6]
 
-const object1 = { user: "Andrey", email: "andrey@email.com" };
-const object2 = { isAdmin: false, isUser: true };
-const combinedObject = { ...object1, ...object2 };
-console.log(combinedObject); //{user: 'Andrey', email: 'andrey@email.com', isAdmin: false, isUser: true}
+// const object1 = { user: "Andrey", email: "andrey@email.com" };
+// const object2 = { isAdmin: false, isUser: true };
+// const combinedObject = { ...object1, ...object2 };
+// console.log(combinedObject); //{user: 'Andrey', email: 'andrey@email.com', isAdmin: false, isUser: true}
+
+// For of loop
+const array = [1, 2, 3, 4, 5];
+for (const item of array) {
+    console.log(item); // 1, 2, 3, 4, 5
+}
