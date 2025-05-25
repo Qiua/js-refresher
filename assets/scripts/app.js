@@ -33,40 +33,73 @@
 // console.log(mirror("c"));
 // console.log(object("1", "2").b);
 
-// Objects
-const person = {
-    name: "John",
-    lastName: "Doe",
-    age: 30,
-    address: {
-        city: "New York",
-        country: "USA"
-    },
-    fullName() {
-        return `${this.name} ${this.lastName}`;
-    }
-};
-// const { name: personName, age, address: { city, country } } = person;
+// // Objects
+// const person = {
+//     name: "John",
+//     lastName: "Doe",
+//     age: 30,
+//     address: {
+//         city: "New York",
+//         country: "USA"
+//     },
+//     fullName() {
+//         return `${this.name} ${this.lastName}`;
+//     }
+// };
+// // const { name: personName, age, address: { city, country } } = person;
 
-console.log(person.fullName()); // John
+// console.log(person.fullName()); // John
 
-//Class Object Blueprint
-class Person {
-    constructor(name, lastName, age) {
-        this.name = name;
-        this.lastName = lastName;
-        this.age = age;
-    }
+// //Class Object Blueprint
+// class Person {
+//     constructor(name, lastName, age) {
+//         this.name = name;
+//         this.lastName = lastName;
+//         this.age = age;
+//     }
 
-    fullName() {
-        return `${this.name} ${this.lastName}`;
-    }
+//     fullName() {
+//         return `${this.name} ${this.lastName}`;
+//     }
 
-    greet() {
-        return `Hello, my name is ${this.fullName()} and I am ${this.age} years old.`;
-    }
-}
-const person1 = new Person("Jane", "Doe", 25);
-const person2 = new Person("Alice", "Smith", 28);
-console.log(person1.fullName()); // Jane Doe
-console.log(person2.greet()); // Alice Smith
+//     greet() {
+//         return `Hello, my name is ${this.fullName()} and I am ${this.age} years old.`;
+//     }
+// }
+// const person1 = new Person("Jane", "Doe", 25);
+// const person2 = new Person("Alice", "Smith", 28);
+// console.log(person1.fullName()); // Jane Doe
+// console.log(person2.greet()); // Alice Smith
+
+//Arrays
+const fruits = ["apple", "banana", "cherry"]; // Array of strings
+const numbers = [1, 2, 3, 4, 5]; // Array of numbers
+const arrayWithMixedTypes = [1, "two", true, null, { key: "value" }, [1, 2, 3]]; // Array with mixed types
+
+const arrayWithSpread = [...fruits, ...numbers]; // Array with spread operator
+const arrayWithConcat = fruits.concat(arrayWithMixedTypes); // Array with concat method
+const arrayWithMap = numbers.map(num => num * 2); // Array with map method
+const arrayWithFilter = numbers.filter(num => num > 2); // Array with filter method
+
+// console.log(arrayWithConcat);
+// arrayWithMap.forEach(num => console.log(num)); // 2, 4, 6, 8, 10
+// console.log(arrayWithFilter); // [3, 4, 5]
+// console.log(arrayWithSpread); // ["apple", "banana", "cherry", 1, 2, 3, 4, 5]
+
+const index = fruits.findIndex((fruit) => {
+    return fruit === "cherry";
+
+}); // 1
+console.log(index);
+
+const arrayMapExample = fruits.map((fruit) => {
+    return fruit + " is " + fruit;
+});
+
+console.log(arrayMapExample); // ["appleapple", "bananabanana", "cherrycherry"]
+
+const arrayToObject = fruits.reduce((acc, fruit) => {
+    acc[fruit] = fruit.length;
+    return acc;
+}, {});
+console.log(arrayToObject); // { apple: 5, banana: 6, cherry: 6 }
